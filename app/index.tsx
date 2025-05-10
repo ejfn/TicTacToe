@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native';
-import { ThemeProvider, useTheme } from './app/context/ThemeContext';
-import GameScreen from './app/screens/GameScreen';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
+import GameScreen from './screens/GameScreen';
 
 const AppContent = () => {
   const { colors, theme } = useTheme();
