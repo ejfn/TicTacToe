@@ -15,8 +15,8 @@ interface ThemeProviderProps {
 // Define color schemes for light and dark modes
 export const lightColors = {
   // Base colors
-  background: '#f8fafc', // Lighter, more consistent background
-  text: '#334155',
+  background: '#f8fafc', // Consistent background for all containers
+  text: '#2d3748',
 
   // Board elements
   boardBackground: '#e2e8f0',
@@ -34,7 +34,7 @@ export const lightColors = {
   oTurnBackground: '#a7f3d0',
 
   // UI elements
-  buttonBackground: '#0ea5e9',
+  buttonBackground: '#0284c7',
   buttonText: '#ffffff',
   buttonShadow: 'rgba(14, 165, 233, 0.5)',
 
@@ -44,15 +44,27 @@ export const lightColors = {
   turnLabelText: '#64748b',
 
   // Other
-  shadowColor: 'rgba(0, 0, 0, 0.1)',
+  shadowColor: 'rgba(0, 0, 0, 0.2)',
   transparentColor: 'transparent',
   borderRadius: 16,
+
+  // Enhanced UI elements
+  cardBackground: '#ffffff',
+  cardBorder: '#e2e8f0',
+  cardShadow: 'rgba(0, 0, 0, 0.1)',
+  accent: '#3b82f6',
+  accentLight: '#dbeafe',
+  accentDark: '#1e40af',
+  success: '#10b981',
+  successLight: '#d1fae5',
+  error: '#ef4444',
+  headerBackground: '#f8fafc', // Matches the main background
 };
 
 export const darkColors = {
   // Base colors
-  background: '#111827', // Slightly lighter for better contrast
-  text: '#f1f5f9',
+  background: '#0f172a', // Richer dark background
+  text: '#f8fafc',
 
   // Board elements
   boardBackground: '#1e293b',
@@ -70,9 +82,9 @@ export const darkColors = {
   oTurnBackground: '#065f46',
 
   // UI elements
-  buttonBackground: '#0284c7',
+  buttonBackground: '#2563eb',
   buttonText: '#f0f9ff',
-  buttonShadow: 'rgba(2, 132, 199, 0.4)',
+  buttonShadow: 'rgba(59, 130, 246, 0.5)',
 
   // Status elements
   drawText: '#c084fc',
@@ -83,6 +95,18 @@ export const darkColors = {
   shadowColor: 'rgba(0, 0, 0, 0.5)',
   transparentColor: 'transparent',
   borderRadius: 16,
+
+  // Enhanced UI elements
+  cardBackground: '#1e293b',
+  cardBorder: '#334155',
+  cardShadow: 'rgba(0, 0, 0, 0.3)',
+  accent: '#3b82f6',
+  accentLight: '#1e3a8a',
+  accentDark: '#93c5fd',
+  success: '#10b981',
+  successLight: '#065f46',
+  error: '#ef4444',
+  headerBackground: '#111827',
 };
 
 // Define theme-specific colors and commonly used values

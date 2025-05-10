@@ -15,6 +15,19 @@ const Cell: React.FC<CellProps> = ({ value, onPress, disabled, testID }) => {
   const scaleAnim = useRef(new Animated.Value(0.8)).current;
   const opacityAnim = useRef(new Animated.Value(0)).current;
 
+  // Define reusable style objects to avoid inline styles
+  const xGlowStyle = {
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 5,
+  };
+
+  const oGlowStyle = {
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 3,
+  };
+
   useEffect(() => {
     if (value) {
       // Animate when a cell gets a value
@@ -74,23 +87,68 @@ const Cell: React.FC<CellProps> = ({ value, onPress, disabled, testID }) => {
             },
           ]}
         >
-          <View style={[styles.xLine, { backgroundColor: colors.xText }]} />
-          <View style={[styles.xLine, styles.xLine2, { backgroundColor: colors.xText }]} />
+          {/* Enhanced X with glow effect */}
+          <View style={styles.xContainer}>
+            <View
+              style={[
+                styles.xLine,
+                {
+                  backgroundColor: colors.xText,
+                  shadowColor: colors.xText,
+                  shadowOffset: { width: 0, height: 0 },
+                  ...xGlowStyle
+                }
+              ]}
+            />
+            <View
+              style={[
+                styles.xLine,
+                styles.xLine2,
+                {
+                  backgroundColor: colors.xText,
+                  shadowColor: colors.xText,
+                  shadowOffset: { width: 0, height: 0 },
+                  ...xGlowStyle
+                }
+              ]}
+            />
+          </View>
         </Animated.View>
       )}
 
       {value === 'O' && (
         <Animated.View
           style={[
-            styles.oCircle,
+            styles.oWrapper,
             {
-              borderColor: colors.oText,
-              backgroundColor: colors.transparentColor,
               opacity: opacityAnim,
               transform: [{ scale: scaleAnim }],
             },
           ]}
-        />
+        >
+          {/* Enhanced O with inner shadow and glow */}
+          <View
+            style={[
+              styles.oCircle,
+              {
+                borderColor: colors.oText,
+                backgroundColor: colors.transparentColor,
+                shadowColor: colors.oText,
+                shadowOffset: { width: 0, height: 0 },
+                ...oGlowStyle
+              },
+            ]}
+          />
+          <View
+            style={[
+              styles.oInner,
+              {
+                borderColor: colors.oCell,
+                backgroundColor: colors.transparentColor,
+              },
+            ]}
+          />
+        </Animated.View>
       )}
     </TouchableOpacity>
   );
@@ -98,8 +156,8 @@ const Cell: React.FC<CellProps> = ({ value, onPress, disabled, testID }) => {
 
 const styles = StyleSheet.create({
   cell: {
-    width: 98, // Precisely calculated to fit the board (320 - 8 padding - 12 margin between cells) / 3
-    height: 98,
+    width: 88, // Reduced to fit the smaller board
+    height: 88, // Reduced to fit the smaller board
     borderWidth: 1.5,
     justifyContent: 'center',
     alignItems: 'center',
@@ -118,25 +176,46 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  xContainer: {
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    transform: [{ rotate: '0deg' }],
+  },
   xLine: {
     position: 'absolute',
     width: 10,
-    height: 60,
+    height: 50,
     borderRadius: 5,
     transform: [{ rotate: '45deg' }],
   },
   xLine2: {
     transform: [{ rotate: '-45deg' }],
   },
-  oCircle: {
+  oWrapper: {
     width: 50,
     height: 50,
-    borderRadius: 25,
-    borderWidth: 10,
-    // backgroundColor will be set dynamically
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  },
+  oCircle: {
+    width: 46,
+    height: 46,
+    borderRadius: 23,
+    borderWidth: 8,
+    position: 'absolute',
+  },
+  oInner: {
+    width: 26,
+    height: 26,
+    borderRadius: 13,
+    position: 'absolute',
+    borderWidth: 2,
   },
   cellRadius: {
-    borderRadius: 12,
+    borderRadius: 16,
   },
 });
 

@@ -30,42 +30,53 @@ const Board: React.FC<BoardProps> = ({ board, onCellPress, gameOver }) => {
         {
           backgroundColor: colors.boardBackground,
           shadowColor: boardShadowColor,
+          borderColor: colors.cellBorder,
         },
       ]}
     >
-      {rows.map((row, rowIndex) => (
-        <View key={`row-${rowIndex}`} style={styles.row}>
-          {row.map(index => (
-            <Cell
-              key={index}
-              value={board[index]}
-              onPress={() => onCellPress(index)}
-              disabled={gameOver}
-            />
-          ))}
-        </View>
-      ))}
+      {/* Board content with subtle border */}
+      <View style={styles.boardInner}>
+        {rows.map((row, rowIndex) => (
+          <View key={`row-${rowIndex}`} style={styles.row}>
+            {row.map(index => (
+              <Cell
+                key={index}
+                value={board[index]}
+                onPress={() => onCellPress(index)}
+                disabled={gameOver}
+              />
+            ))}
+          </View>
+        ))}
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   board: {
-    width: 320,
-    height: 320,
+    width: 300, // Reduced from 330
+    height: 300, // Reduced from 330
     flexDirection: 'column',
-    borderRadius: 16,
-    padding: 6, // Slightly more padding for consistent spacing
+    borderRadius: 20,
+    borderWidth: 1,
     // Shadow color is applied dynamically
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.25,
-    shadowRadius: 8,
-    elevation: 12,
-    margin: 10,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
+    elevation: 15,
+    margin: 5, // Reduced from 10
+    padding: 3,
+  },
+  boardInner: {
+    flex: 1,
+    borderRadius: 16,
+    padding: 4,
+    justifyContent: 'space-between',
   },
   row: {
     flexDirection: 'row',
-    height: 102, // Match the cell height + margins (98 + 4)
+    height: 96, // Reduced to match the new cell height + margins
     justifyContent: 'space-between',
     paddingVertical: 0,
   },
