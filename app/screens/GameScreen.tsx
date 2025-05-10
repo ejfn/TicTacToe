@@ -262,7 +262,7 @@ const GameScreen: React.FC = () => {
           styles.scoreboardContainer,
           {
             backgroundColor: colors.boardBackground,
-            borderColor: colors.cellBorder,
+            borderColor: colors.boardBackground,
             shadowColor: colors.shadowColor,
           },
         ]}
@@ -337,8 +337,8 @@ const GameScreen: React.FC = () => {
         <View style={[
           styles.cardContainer,
           {
-            backgroundColor: colors.cardBackground,
-            borderColor: colors.cardBorder,
+            backgroundColor: colors.boardBackground,
+            borderColor: colors.cellBorder,
             shadowColor: colors.cardShadow
           }
         ]}>
