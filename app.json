@@ -7,7 +7,9 @@
     "primaryColor": "#0f172a",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "jsEngine": "hermes",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -33,6 +35,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d6776431-f724-449d-aebf-ff9ed1dd09e2"
+      }
+    },
+    "owner": "ericvan76",
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/d6776431-f724-449d-aebf-ff9ed1dd09e2"
     }
   }
 }
