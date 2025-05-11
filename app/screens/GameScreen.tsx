@@ -135,7 +135,7 @@ const GameScreen: React.FC = () => {
             shadowStyles.transparentBg,
             {
               borderColor: colors.drawText,
-              backgroundColor: colors.cardBackground, // Use cardBackground for consistency
+              backgroundColor: colors.boardBackground, // Use boardBackground for consistency with turn container
             },
           ]}
         >
@@ -157,7 +157,7 @@ const GameScreen: React.FC = () => {
             shadowStyles.transparentBg,
             {
               borderColor: isXWinner ? colors.xText : colors.oText,
-              backgroundColor: colors.cardBackground, // Use cardBackground for consistency
+              backgroundColor: colors.boardBackground, // Use boardBackground for consistency with turn container
             },
           ]}
         >
