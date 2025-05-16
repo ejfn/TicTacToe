@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Tic Tac Toe",
+    "name": "TicTacToe",
     "slug": "tic-tac-toe",
     "version": "1.0.0",
     "description": "A beautiful Tic Tac Toe game with dark/light themes and animations",
@@ -36,15 +36,15 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {
-      "eas": {
-        "projectId": "d6776431-f724-449d-aebf-ff9ed1dd09e2"
-      }
-    },
     "owner": "ericvan76",
     "runtimeVersion": "1.0.0",
     "updates": {
-      "url": "https://u.expo.dev/d6776431-f724-449d-aebf-ff9ed1dd09e2"
+      "url": "https://u.expo.dev/cdd0889c-d9e9-43cc-9980-049f31a82373"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cdd0889c-d9e9-43cc-9980-049f31a82373"
+      }
     }
   }
 }
