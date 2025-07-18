@@ -2,6 +2,7 @@
   "expo": {
     "name": "TicTacToe",
     "slug": "tic-tac-toe",
+    "homepage": "https://ejfn.github.io/TicTacToe",
     "version": "1.0.0",
     "description": "A beautiful Tic Tac Toe game with dark/light themes and animations",
     "primaryColor": "#0f172a",
@@ -34,7 +35,8 @@
       "icon": "./assets/icon.png"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "baseUrl": "/TicTacToe"
     },
     "owner": "ericvan76",
     "runtimeVersion": "1.0.0",
