@@ -2,11 +2,14 @@
   "name": "tic-tac-toe",
   "version": "1.0.0",
   "main": "index.ts",
+  "homepage": "http://ejfn.github.io/TicTacToe",
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
+    "predeploy": "npx expo export -p web",
+    "deploy": "gh-pages -d dist",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
@@ -14,16 +17,16 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "dependencies": {
+    "@expo/metro-runtime": "~5.0.4",
     "expo": "~53.0.9",
+    "expo-dev-client": "~5.1.8",
     "expo-status-bar": "~2.2.3",
     "expo-updates": "~0.28.12",
     "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-native": "0.79.2",
     "react-native-safe-area-context": "5.4.0",
-    "react-dom": "19.0.0",
-    "react-native-web": "^0.20.0",
-    "@expo/metro-runtime": "~5.0.4",
-    "expo-dev-client": "~5.1.8"
+    "react-native-web": "^0.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -39,6 +42,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-native": "^5.0.0",
+    "gh-pages": "^6.3.0",
     "glob": "^10.3.10",
     "jest": "~29.7.0",
     "jest-expo": "^53.0.0",
