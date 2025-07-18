@@ -8,6 +8,9 @@
     "primaryColor": "#0f172a",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "experiments": {
+      "baseUrl": "/TicTacToe"
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -35,8 +38,7 @@
       "icon": "./assets/icon.png"
     },
     "web": {
-      "favicon": "./assets/favicon.png",
-      "baseUrl": "/TicTacToe"
+      "favicon": "./assets/favicon.png"
     },
     "owner": "ericvan76",
     "runtimeVersion": "1.0.0",
